@@ -28,8 +28,8 @@ const socketConnected = (socket) => {
     io.emit('totalClients', connectedSockets.size);
 
     socket.on('chat message', (msg) => {
-        console.log(socket.id + " messaged: " + msg);
-        io.emit('chat message', msg);
+        console.log(msg.name + " messaged: " + msg.message + " on " + msg.date);
+        socket.broadcast.emit('message', msg);
     });
     socket.on('disconnect', () => {
         console.log(socket.id + ' user disconnected');

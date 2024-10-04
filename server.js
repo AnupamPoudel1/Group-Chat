@@ -40,17 +40,6 @@ const socketConnected = (socket) => {
 
 io.on('connection', socketConnected);
 
-// io.on('connection', (socket) => {
-//     console.log(socket.id + ' user connected');
-//     socket.on('chat message', (msg) => {
-//         console.log(socket.id + " messaged: " + msg);
-//         io.emit('chat message', msg);
-//     });
-//     socket.on('disconnect', () => {
-//         console.log(socket.id + ' user disconnected');
-//     });
-// });
-
 // url encoded
 app.use(express.urlencoded({ extended: false }));
 

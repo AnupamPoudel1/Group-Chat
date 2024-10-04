@@ -16,7 +16,10 @@
         >
           Weeee Chat 💙
         </h1>
-        <p class="text-base font-bold w-full text-center py-5" id="totalClients">
+        <p
+          class="text-base font-bold w-full text-center py-5"
+          id="totalClients"
+        >
           Total clients:
         </p>
       </div>
@@ -32,41 +35,17 @@
             maxlength="20"
           />
         </div>
-        <div
-          class="message-container p-5 h-full bg-gray-50 overflow-hidden"
-          id="messages"
-        >
-          <ul class="messages h-[90%] flex flex-col overflow-y-auto">
-            <li class="left-msg max-w-[80%] w-max my-2 inline-flex">
-              <div
-                class="msg inline-flex flex-col border border-gray-200 bg-gray-200 rounded-tr-md rounded-br-md rounded-tl-md px-2 py-1"
-              >
-                <p class="text-base text-black font-medium">Hello Love</p>
-                <span class="text-xs text-gray-600 font-light mt-1">
-                  bluebird 💙 4th October 12:40
-                </span>
-              </div>
-            </li>
-
-            <li class="right-msg max-w-[80%] w-max my-2 inline-flex ml-auto">
-              <div
-                class="msg inline-flex flex-col border border-gray-800 bg-gray-800 rounded-tr-md rounded-bl-md rounded-tl-md px-2 py-1"
-              >
-                <p class="text-base text-gray-50 font-medium text-left">
-                  Hello Rose
-                </p>
-                <span class="text-xs text-gray-200 font-light mt-1">
-                  bluebird 💙 4th October 12:44
-                </span>
-              </div>
-            </li>
-
-            <li
-              class="message-feedback p-4 w-full text-center font-semibold text-gray-950"
-            >
-              <p class="feedback" id="feedback">Rose is typing...</p>
-            </li>
-          </ul>
+        <div class="p-5 h-full bg-gray-50 overflow-hidden" id="messages">
+          <ul
+            class="messages h-[80%] flex flex-col overflow-y-auto"
+            id="message-container"
+          ></ul>
+          <div
+            class="feedback h-[10%] w-full text-center font-semibold text-gray-950 flex justify-center items-center"
+            id="feedback"
+          >
+            Rose is typing...
+          </div>
           <form
             class="message-form flex justify-between h-[10%] w-full"
             id="message-form"
@@ -77,6 +56,7 @@
               id="message-input"
               class="message-input h-full border border-black focus:outline-none w-3/4 bg-gray-100 text-black px-2 shadow-lg"
               placeholder="Message....."
+              autocomplete="off"
             />
             <button
               type="submit"

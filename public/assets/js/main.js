@@ -4,15 +4,23 @@ const form = document.getElementById('message-form');
 const input = document.getElementById('message-input');
 const username = document.getElementById('name-input');
 const messageContainer = document.getElementById('message-container');
-const messageFeedback = document.getElementById('message-feedback')
+const messageFeedback = document.getElementById('feedback')
 const clients = document.getElementById('totalClients');
 
 socket.on('totalClients', (data) => {
-    console.log(data);
     clients.innerText = `Total clients: ${data}`;
 });
 
+const removeFeedback = () => {
+    document.querySelectorAll('p.feedbackMsg').forEach(element => {
+        element.parentNode.removeChild(element);
+    });
+}
+
 const addMessages = (isOwn, msg) => {
+
+    removeFeedback();
+
     const element = isOwn ?
         `
             <li class="right-msg max-w-[80%] w-max my-2 inline-flex ml-auto">
@@ -77,6 +85,28 @@ form.addEventListener('submit', (e) => {
 });
 
 socket.on('message', (msg) => {
-    console.log(msg);
     addMessages(false, msg);
+});
+
+input.addEventListener('focus', (e) => {
+    socket.emit('feedback', {
+        feedback: `${username.value} is typing a message .....`
+    });
+});
+input.addEventListener('keypress', (e) => {
+    socket.emit('feedback', {
+        feedback: `${username.value} is typing a message .....`
+    });
+});
+
+input.addEventListener('blur', (e) => {
+    socket.emit('feedback', {
+        feedback: ``
+    });
+});
+
+socket.on('feedback', (data) => {
+    removeFeedback();
+    const text = `<p class="feedbackMsg">${data.feedback}</p>`
+    messageFeedback.innerHTML += text;
 });

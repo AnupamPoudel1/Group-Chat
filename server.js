@@ -22,17 +22,19 @@ const io = new Server(server);
 let connectedSockets = new Set();
 
 const socketConnected = (socket) => {
-    console.log(socket.id + ' user connected');
     connectedSockets.add(socket.id);
 
     io.emit('totalClients', connectedSockets.size);
 
     socket.on('chat message', (msg) => {
-        console.log(msg.name + " messaged: " + msg.message + " on " + msg.date);
         socket.broadcast.emit('message', msg);
     });
+
+    socket.on('feedback', (data) => {
+        socket.broadcast.emit('feedback', data);
+    });
+
     socket.on('disconnect', () => {
-        console.log(socket.id + ' user disconnected');
         connectedSockets.delete(socket.id);
         io.emit('totalClients', connectedSockets.size);
     });

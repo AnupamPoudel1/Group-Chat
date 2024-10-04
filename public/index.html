@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CSS output -->
+    <link rel="stylesheet" href="/assets/css/output.css" />
+    <!-- Title -->
+    <title>Weeee Chat 🖐</title>
+  </head>
+  <body class="flex justify-center items-center flex-col">
+    <div class="w-[375px] h-[629px]">
+      <div class="h-1/5">
+        <h1
+          class="text-2xl font-bold border-b-2 w-full text-center py-3 border-gray-300 shadow-lg"
+        >
+          Weeee Chat 💙
+        </h1>
+        <p class="text-base font-bold w-full text-center py-5">
+          Total client: 2
+        </p>
+      </div>
+      <div
+        class="phone border-4 border-gray-400 rounded-md flex flex-col w-full h-4/5"
+      >
+        <div
+          class="name bg-gray-400 text-xl h-[10%] flex items-center"
+        >
+          <input
+            type="text"
+            id="name-input"
+            class="name bg-transparent text-black p-2 font-bold h-full"
+            value="anoynomous"
+            maxlength="20"
+          />
+        </div>
+        <div
+          class="message-container p-5 h-full bg-gray-50 overflow-hidden"
+          id="messages"
+        >
+          <ul class="messages h-[90%] flex flex-col overflow-y-auto">
+            <li class="left-msg max-w-[80%] w-max my-2 inline-flex">
+              <div
+                class="msg inline-flex flex-col border border-gray-200 bg-gray-200 rounded-tr-md rounded-br-md rounded-tl-md px-2 py-1"
+              >
+                <p class="text-base text-black font-medium">
+                  Hello Love
+                </p>
+                <span class="text-xs text-gray-600 font-light mt-1">
+                  bluebird 💙 4th October 12:40
+                </span>
+              </div>
+            </li>
+
+            <li class="right-msg max-w-[80%] w-max my-2 inline-flex ml-auto">
+              <div
+                class="msg inline-flex flex-col border border-gray-800 bg-gray-800 rounded-tr-md rounded-bl-md rounded-tl-md px-2 py-1"
+              >
+                <p class="text-base text-gray-50 font-medium text-left">
+                  Hello Rose
+                </p>
+                <span class="text-xs text-gray-200 font-light mt-1">
+                  bluebird 💙 4th October 12:44
+                </span>
+              </div>
+            </li>
+
+            <li class="message-feedback p-4 w-full text-center font-semibold text-gray-950">
+              <p class="feedback" id="feedback">Rose is typing...</p>
+            </li>
+          </ul>
+          <form
+            class="message-form flex justify-between h-[10%] w-full"
+            id="message-form"
+          >
+            <input
+              type="text"
+              name="message-input"
+              id="message-input"
+              class="message-input h-full border border-black focus:outline-none w-3/4 bg-gray-100 text-black px-2 shadow-lg"
+              placeholder="Message....."
+            />
+            <button
+              type="submit"
+              class="send w-1/5 h-full bg-gray-400 text-black rounded-md shadow-lg"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

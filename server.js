@@ -3,12 +3,26 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
+const { createServer } = require('http');
+const {Server} = require('socket.io');
 
 // port
 const PORT = process.env.port || 5000;
 
 // App
 const app = express();
+// setting ip server
+const server = createServer(app);
+
+// setting up socket io
+const io = new Server(server);
+
+io.on('connection', (socket) => {
+    console.log(socket.id + ' user connected');
+    socket.on('disconnect', () => {
+        console.log(socket.id + ' user disconnected');
+    })
+})
 
 // url encoded
 app.use(express.urlencoded({ extended: false }));
@@ -20,6 +34,6 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

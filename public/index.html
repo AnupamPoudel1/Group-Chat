@@ -23,9 +23,7 @@
       <div
         class="phone border-4 border-gray-400 rounded-md flex flex-col w-full h-4/5"
       >
-        <div
-          class="name bg-gray-400 text-xl h-[10%] flex items-center"
-        >
+        <div class="name bg-gray-400 text-xl h-[10%] flex items-center">
           <input
             type="text"
             id="name-input"
@@ -43,9 +41,7 @@
               <div
                 class="msg inline-flex flex-col border border-gray-200 bg-gray-200 rounded-tr-md rounded-br-md rounded-tl-md px-2 py-1"
               >
-                <p class="text-base text-black font-medium">
-                  Hello Love
-                </p>
+                <p class="text-base text-black font-medium">Hello Love</p>
                 <span class="text-xs text-gray-600 font-light mt-1">
                   bluebird 💙 4th October 12:40
                 </span>
@@ -65,7 +61,9 @@
               </div>
             </li>
 
-            <li class="message-feedback p-4 w-full text-center font-semibold text-gray-950">
+            <li
+              class="message-feedback p-4 w-full text-center font-semibold text-gray-950"
+            >
               <p class="feedback" id="feedback">Rose is typing...</p>
             </li>
           </ul>
@@ -90,5 +88,9 @@
         </div>
       </div>
     </div>
+
+    <!-- External JS for socket programming -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

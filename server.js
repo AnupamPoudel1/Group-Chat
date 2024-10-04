@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const { createServer } = require('http');
-const {Server} = require('socket.io');
+const { Server } = require('socket.io');
 
 // port
 const PORT = process.env.port || 5000;
@@ -19,6 +19,9 @@ const io = new Server(server);
 
 io.on('connection', (socket) => {
     console.log(socket.id + ' user connected');
+    socket.on('chat message', (msg) => {
+        console.log(socket.id + " messaged: " + msg);
+    })
     socket.on('disconnect', () => {
         console.log(socket.id + ' user disconnected');
     })

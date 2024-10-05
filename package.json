@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "node server.js",
     "build:css": "npx tailwindcss -i ./public/assets/css/input.css -o ./public/assets/css/output.css"
   },
   "keywords": [],

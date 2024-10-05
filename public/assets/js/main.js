@@ -23,7 +23,7 @@ const addMessages = (isOwn, msg) => {
 
     const element = isOwn ?
         `
-            <li class="right-msg max-w-[80%] w-max my-2 inline-flex ml-auto">
+            <li class="right-msg max-w-[80%] w-max my-2 inline-flex ml-auto shadow-lg">
               <div
                 class="msg inline-flex flex-col border border-gray-800 bg-gray-800 rounded-tr-md rounded-bl-md rounded-tl-md px-2 py-1"
               >
@@ -31,14 +31,14 @@ const addMessages = (isOwn, msg) => {
                     ${msg.message}
                 </p>
                 <span class="text-xs text-gray-200 font-light mt-1">
-                    ${msg.name} 💙 ${msg.date}
+                    ${msg.name} - ${msg.date}
                 </span>
               </div>
             </li>
         `
         :
         `
-            <li class="left-msg max-w-[80%] w-max my-2 inline-flex">
+            <li class="left-msg max-w-[80%] w-max my-2 inline-flex shadow-lg">
               <div
                 class="msg inline-flex flex-col border border-gray-200 bg-gray-200 rounded-tr-md rounded-br-md rounded-tl-md px-2 py-1"
               >
@@ -46,7 +46,7 @@ const addMessages = (isOwn, msg) => {
                     ${msg.message}
                 </p>
                 <span class="text-xs text-gray-600 font-light mt-1">
-                    ${msg.name} 💙 ${msg.date}
+                    ${msg.name} - ${msg.date}
                 </span>
               </div>
             </li>

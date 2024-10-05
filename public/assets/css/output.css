@@ -587,16 +587,16 @@ video {
   height: 10%;
 }
 
-.h-\[629px\] {
-  height: 629px;
-}
-
 .h-\[80\%\] {
   height: 80%;
 }
 
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .w-1\/5 {
@@ -607,10 +607,6 @@ video {
   width: 75%;
 }
 
-.w-\[375px\] {
-  width: 375px;
-}
-
 .w-full {
   width: 100%;
 }
@@ -618,6 +614,10 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .max-w-\[80\%\] {
@@ -646,10 +646,6 @@ video {
 
 .overflow-y-auto {
   overflow-y: auto;
-}
-
-.text-wrap {
-  text-wrap: wrap;
 }
 
 .rounded-md {
@@ -841,6 +837,11 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 /* width */
 
 ::-webkit-scrollbar {
@@ -868,4 +869,10 @@ video {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+@media (min-width: 1024px) {
+  .lg\:w-\[50\%\] {
+    width: 50%;
+  }
 }
